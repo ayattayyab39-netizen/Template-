@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - AI SaaS Template Kit</title>
+    <meta name="description" content="Choose the perfect plan for your business. Flexible pricing options with no hidden fees. Start free, scale as you grow.">
+    <!-- <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+<body class="theme-light color-purple">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="index.html" class="dropdown-link">Home 1 - Hero AI</a>
+                            <a href="home2.html" class="dropdown-link">Home 2 - Gradient Minimal</a>
+                            <a href="home3.html" class="dropdown-link">Home 3 - Dark Futuristic</a>
+                            <a href="home4.html" class="dropdown-link">Home 4 - Startup Growth</a>
+                            <a href="home5.html" class="dropdown-link">Home 5 - Product Demo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="dashboard.html" class="nav-link">Dashboard <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="dashboard.html" class="dropdown-link">Overview</a>
+                            <a href="dashboard-chat.html" class="dropdown-link">AI Chat</a>
+                            <a href="dashboard-analytics.html" class="dropdown-link">Analytics</a>
+                            <a href="dashboard-billing.html" class="dropdown-link">Billing</a>
+                            <a href="dashboard-team.html" class="dropdown-link">Team</a>
+                            <a href="dashboard-settings.html" class="dropdown-link">Settings</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </button>
+                <button class="color-scheme-toggle" id="color-scheme-toggle" title="Change Color Scheme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-pricing">
+        <div class="hero-background">
+            <div class="gradient-orb gradient-orb-1"></div>
+            <div class="gradient-orb gradient-orb-2"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title">
+                    <span class="title-line">Simple, Transparent</span>
+                    <span class="title-line gradient-text">Pricing</span>
+                </h1>
+                <p class="hero-description">
+                    Choose the perfect plan for your business. No hidden fees, no surprises. 
+                    Start free and scale as you grow.
+                </p>
+                <div class="pricing-toggle">
+                    <span class="toggle-label">Monthly</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="billing-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label">Yearly <span class="discount-badge">Save 20%</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Starter</h3>
+                        <p class="plan-description">Perfect for individuals and small teams</p>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="0" data-yearly="0">0</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="plan-billing">
+                            <span class="billing-text">Free forever</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Up to 1,000 API calls/month</li>
+                        <li><i class="fas fa-check"></i> Basic analytics dashboard</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li><i class="fas fa-check"></i> 1 user account</li>
+                        <li><i class="fas fa-check"></i> Basic integrations</li>
+                        <li><i class="fas fa-check"></i> Community forum access</li>
+                    </ul>
+                    <a href="dashboard.html" class="btn btn-outline btn-large">Get Started Free</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">Professional</h3>
+                        <p class="plan-description">Ideal for growing businesses</p>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="29" data-yearly="23">29</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="plan-billing">
+                            <span class="billing-text">Billed monthly</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Up to 10,000 API calls/month</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics & reporting</li>
+                        <li><i class="fas fa-check"></i> Priority email support</li>
+                        <li><i class="fas fa-check"></i> Up to 5 user accounts</li>
+                        <li><i class="fas fa-check"></i> Custom integrations</li>
+                        <li><i class="fas fa-check"></i> Data export capabilities</li>
+                        <li><i class="fas fa-check"></i> Advanced AI models</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                    </ul>
+                    <a href="dashboard.html" class="btn btn-primary btn-large">Start Free Trial</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Enterprise</h3>
+                        <p class="plan-description">For large organizations</p>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="99" data-yearly="79">99</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="plan-billing">
+                            <span class="billing-text">Billed monthly</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Unlimited API calls</li>
+                        <li><i class="fas fa-check"></i> Custom analytics & dashboards</li>
+                        <li><i class="fas fa-check"></i> 24/7 phone & chat support</li>
+                        <li><i class="fas fa-check"></i> Unlimited user accounts</li>
+                        <li><i class="fas fa-check"></i> White-label solution</li>
+                        <li><i class="fas fa-check"></i> Advanced data export</li>
+                        <li><i class="fas fa-check"></i> Custom AI model training</li>
+                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                        <li><i class="fas fa-check"></i> SLA guarantee</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline btn-large">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison Section -->
+    <section class="features-comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Compare Plans</h2>
+                <p class="section-description">
+                    See what's included in each plan
+                </p>
+            </div>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-column">Features</th>
+                            <th class="plan-column">Starter</th>
+                            <th class="plan-column">Professional</th>
+                            <th class="plan-column">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">API Calls per Month</td>
+                            <td class="plan-feature">1,000</td>
+                            <td class="plan-feature">10,000</td>
+                            <td class="plan-feature">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">User Accounts</td>
+                            <td class="plan-feature">1</td>
+                            <td class="plan-feature">5</td>
+                            <td class="plan-feature">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Analytics Dashboard</td>
+                            <td class="plan-feature">Basic</td>
+                            <td class="plan-feature">Advanced</td>
+                            <td class="plan-feature">Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Support</td>
+                            <td class="plan-feature">Email</td>
+                            <td class="plan-feature">Priority Email</td>
+                            <td class="plan-feature">24/7 Phone & Chat</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Integrations</td>
+                            <td class="plan-feature">Basic</td>
+                            <td class="plan-feature">Custom</td>
+                            <td class="plan-feature">White-label</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Data Export</td>
+                            <td class="plan-feature">CSV</td>
+                            <td class="plan-feature">CSV, JSON, PDF</td>
+                            <td class="plan-feature">All Formats + API</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">AI Models</td>
+                            <td class="plan-feature">Pre-trained</td>
+                            <td class="plan-feature">Advanced</td>
+                            <td class="plan-feature">Custom Training</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">SLA</td>
+                            <td class="plan-feature">-</td>
+                            <td class="plan-feature">99.9%</td>
+                            <td class="plan-feature">99.99%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">
+                    Everything you need to know about our pricing
+                </p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I change plans anytime?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing differences.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there a free trial?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All paid plans come with a 14-day free trial. No credit card required to start.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What happens if I exceed my API limits?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We'll notify you when you're approaching your limit. You can upgrade your plan or purchase additional API calls as needed.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer custom pricing?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, for large organizations with specific needs, we offer custom pricing and features. Contact our sales team for more information.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I cancel anytime?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. You can cancel your subscription at any time from your dashboard. No cancellation fees or long-term contracts.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards, PayPal, and bank transfers for annual plans. All payments are processed securely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-description">
+                Join thousands of businesses already using our AI platform to grow and scale.
+            </p>
+            <div class="cta-actions">
+                <a href="dashboard.html" class="btn btn-outline btn-large">
+                    <i class="fas fa-rocket"></i>
+                    Start Free Trial
+                </a>
+                <a href="contact.html" class="btn btn-outline btn-large">
+                    <i class="fas fa-phone"></i>
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                    </a>
+                    <p class="footer-description">
+                        The most powerful AI SaaS platform for modern businesses. 
+                        Build, scale, and grow with artificial intelligence.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="api.html">API</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="status.html">Status</a></li>
+                        <li><a href="security.html">Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="gdpr.html">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 AI SaaS Template Kit. All rights reserved.
+                </p>
+                <div class="footer-social">
+                    <a href="https://twitter.com" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://discord.com" class="social-link" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script>
+        // Pricing toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const billingToggle = document.getElementById('billing-toggle');
+            const amounts = document.querySelectorAll('.amount');
+            const periodEls = document.querySelectorAll('.period');
+            const billingTexts = document.querySelectorAll('.billing-text');
+            
+            billingToggle.addEventListener('change', function() {
+                amounts.forEach(amount => {
+                    const monthly = amount.dataset.monthly;
+                    const yearly = amount.dataset.yearly;
+                    amount.textContent = this.checked ? yearly : monthly;
+                });
+
+                periodEls.forEach(p => { p.textContent = this.checked ? '/month (billed yearly)' : '/month'; });
+                billingTexts.forEach(b => { b.textContent = billingToggle.checked ? 'Billed yearly (save 20%)' : (b.closest('.pricing-card').querySelector('.plan-name').textContent === 'Starter' ? 'Free forever' : 'Billed monthly'); });
+            });
+
+            // FAQ accordion
+            document.querySelectorAll('.faq-item .faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

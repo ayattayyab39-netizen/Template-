@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SaaS Template Kit - Premium HTML Template</title>
+    <meta name="description" content="Premium AI SaaS Template Kit with modern design, dashboard, and multiple homepage variations. Built with HTML, CSS, and JavaScript.">
+    <!-- <!-- <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico"> --> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+  </head>
+<body class="theme-light color-purple">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="index.html" class="dropdown-link active">Home 1 - Hero AI</a>
+                            <a href="home2.html" class="dropdown-link">Home 2 - Gradient Minimal</a>
+                            <a href="home3.html" class="dropdown-link">Home 3 - Dark Futuristic</a>
+                            <a href="home4.html" class="dropdown-link">Home 4 - Startup Growth</a>
+                            <a href="home5.html" class="dropdown-link">Home 5 - Product Demo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="dashboard.html" class="nav-link">Dashboard <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="dashboard.html" class="dropdown-link">Overview</a>
+                            <a href="dashboard-chat.html" class="dropdown-link">AI Chat</a>
+                            <a href="dashboard-analytics.html" class="dropdown-link">Analytics</a>
+                            <a href="dashboard-billing.html" class="dropdown-link">Billing</a>
+                            <a href="dashboard-team.html" class="dropdown-link">Team</a>
+                            <a href="dashboard-settings.html" class="dropdown-link">Settings</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </button>
+                <button class="color-scheme-toggle" id="color-scheme-toggle" title="Change Color Scheme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="gradient-orb gradient-orb-1"></div>
+            <div class="gradient-orb gradient-orb-2"></div>
+            <div class="gradient-orb gradient-orb-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Build the Future with</span>
+                        <span class="title-line gradient-text">AI-Powered SaaS</span>
+                    </h1>
+                    <p class="hero-description">
+                        Transform your business with our cutting-edge AI SaaS platform. 
+                        Get intelligent insights, automate workflows, and scale your operations 
+                        with the power of artificial intelligence.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="dashboard.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-rocket"></i>
+                            Get Started Free
+                        </a>
+                        <a href="features.html" class="btn btn-outline btn-large">
+                            <i class="fas fa-play"></i>
+                            Watch Demo
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Active Users</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="ai-robot-container">
+                        <div id="robot-animation"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features for Modern Businesses</h2>
+                <p class="section-description">
+                    Everything you need to build, scale, and manage your AI-powered SaaS application
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI-Powered Analytics</h3>
+                    <p class="feature-description">
+                        Get intelligent insights and predictions from your data with our advanced AI algorithms.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">Automated Workflows</h3>
+                    <p class="feature-description">
+                        Streamline your business processes with intelligent automation and smart workflows.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Enterprise Security</h3>
+                    <p class="feature-description">
+                        Bank-level security with end-to-end encryption and compliance with industry standards.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Real-time Analytics</h3>
+                    <p class="feature-description">
+                        Monitor your business performance with real-time dashboards and comprehensive reports.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Team Collaboration</h3>
+                    <p class="feature-description">
+                        Collaborate seamlessly with your team using our integrated communication tools.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Mobile Ready</h3>
+                    <p class="feature-description">
+                        Access your dashboard and manage your business from anywhere with our mobile app.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Your Business?</h2>
+            <p class="cta-description">
+                Join thousands of businesses already using our AI SaaS platform to grow and scale.
+            </p>
+            <div class="cta-actions">
+                <a href="dashboard.html" class="btn btn-outline btn-large">
+                    <i class="fas fa-rocket"></i>
+                    Start Free Trial
+                </a>
+                <a href="contact.html" class="btn btn-outline btn-large">
+                    <i class="fas fa-phone"></i>
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                    </a>
+                    <p class="footer-description">
+                        The most powerful AI SaaS platform for modern businesses. 
+                        Build, scale, and grow with artificial intelligence.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="api.html">API</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="status.html">Status</a></li>
+                        <li><a href="security.html">Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="gdpr.html">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 AI SaaS Template Kit. All rights reserved.
+                </p>
+                <div class="footer-social">
+                    <a href="https://twitter.com" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://discord.com" class="social-link" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script>
+        // Initialize robot animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const robotContainer = document.getElementById('robot-animation');
+            if (robotContainer) {
+                // Show CSS robot animation immediately
+                showRobotFallback();
+                
+                // Use CSS fallback animation only to avoid any potential error indicators
+                // The CSS robot animation is more reliable and doesn't show error signs
+                
+                function showRobotFallback() {
+                    robotContainer.innerHTML = `
+                        <div class="robot-fallback">
+                            <div class="robot-body">
+                                <div class="robot-head">
+                                    <div class="robot-eyes">
+                                        <div class="eye left-eye"></div>
+                                        <div class="eye right-eye"></div>
+                                    </div>
+                                    <div class="robot-mouth"></div>
+                                </div>
+                                <div class="robot-torso">
+                                    <div class="robot-antenna"></div>
+                                    <div class="robot-screen">
+                                        <div class="screen-content">
+                                            <div class="data-line"></div>
+                                            <div class="data-line"></div>
+                                            <div class="data-line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="robot-arms">
+                                    <div class="arm left-arm"></div>
+                                    <div class="arm right-arm"></div>
+                                </div>
+                                <div class="robot-legs">
+                                    <div class="leg left-leg"></div>
+                                    <div class="leg right-leg"></div>
+                                </div>
+                            </div>
+                            <div class="robot-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+        });
+    </script>
+  </body>
+</html>
+

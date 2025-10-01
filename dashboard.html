@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SaaS Dashboard - Premium Template</title>
+    <meta name="description" content="Premium AI SaaS Dashboard with modern design and comprehensive features. Built with HTML, CSS, and JavaScript.">
+    <!-- <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
+<body class="theme-light color-purple">
+    <!-- Dashboard Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </button>
+                <button class="color-scheme-toggle" id="color-scheme-toggle" title="Change Color Scheme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a855f7'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='14' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="User">
+                    </div>
+                    <span class="user-name">User</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3>Dashboard</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul class="sidebar-menu">
+                        <li class="menu-item active">
+                            <a href="dashboard.html" class="menu-link">
+                                <i class="fas fa-home"></i>
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-chat.html" class="menu-link">
+                                <i class="fas fa-comments"></i>
+                                <span>AI Chat</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-analytics.html" class="menu-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-billing.html" class="menu-link">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Billing</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-team.html" class="menu-link">
+                                <i class="fas fa-users"></i>
+                                <span>Team</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-settings.html" class="menu-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <div class="dashboard-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="header-content">
+                        <h1 class="page-title">Dashboard Overview</h1>
+                        <p class="page-description">Welcome back! Here's what's happening with your AI platform.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            <span>Export Data</span>
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            <span>New Project</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number counter">2,847</div>
+                            <div class="stat-label">Active Users</div>
+                            <div class="stat-change positive">+12% from last month</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number counter">$45,231</div>
+                            <div class="stat-label">Revenue</div>
+                            <div class="stat-change positive">+8% from last month</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number counter">1,234</div>
+                            <div class="stat-label">AI Requests</div>
+                            <div class="stat-change positive">+23% from last month</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number counter">99.9%</div>
+                            <div class="stat-label">Uptime</div>
+                            <div class="stat-change positive">+0.1% improvement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Usage Analytics</h3>
+                            <div class="chart-controls">
+                                <button class="chart-btn active">7D</button>
+                                <button class="chart-btn">30D</button>
+                                <button class="chart-btn">90D</button>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <div class="chart-placeholder">
+                                <div class="chart-bars">
+                                    <div class="bar" style="height: 60%;"></div>
+                                    <div class="bar" style="height: 80%;"></div>
+                                    <div class="bar" style="height: 45%;"></div>
+                                    <div class="bar" style="height: 90%;"></div>
+                                    <div class="bar" style="height: 70%;"></div>
+                                    <div class="bar" style="height: 85%;"></div>
+                                    <div class="bar" style="height: 95%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">AI Performance</h3>
+                            <div class="chart-controls">
+                                <button class="chart-btn active">Real-time</button>
+                                <button class="chart-btn">Hourly</button>
+                            </div>
+                        </div>
+                        <div class="chart-content">
+                            <div class="chart-placeholder">
+                                <div class="performance-metrics">
+                                    <div class="metric-item">
+                                        <span class="metric-label">Accuracy</span>
+                                        <span class="metric-value">94.2%</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Response Time</span>
+                                        <span class="metric-value">1.2s</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Success Rate</span>
+                                        <span class="metric-value">99.1%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <div class="activity-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Activity</h3>
+                            <a href="dashboard-analytics.html" class="card-link">View All</a>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">New user registered</div>
+                                    <div class="activity-time">2 minutes ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">AI model updated</div>
+                                    <div class="activity-time">1 hour ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Monthly report generated</div>
+                                    <div class="activity-time">3 hours ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">System maintenance completed</div>
+                                    <div class="activity-time">1 day ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

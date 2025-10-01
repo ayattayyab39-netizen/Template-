@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Dashboard</title>
+    <meta name="description" content="Manage your account settings, preferences, and security options for your AI SaaS platform.">
+    <!-- <!-- <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico"> --> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
+<body class="theme-light color-purple">
+    <!-- Dashboard Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </button>
+                <button class="color-scheme-toggle" id="color-scheme-toggle" title="Change Color Scheme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a855f7'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='14' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="User">
+                    </div>
+                    <span class="user-name">User</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3>Dashboard</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul class="sidebar-menu">
+                        <li class="menu-item">
+                            <a href="dashboard.html" class="menu-link">
+                                <i class="fas fa-home"></i>
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-chat.html" class="menu-link">
+                                <i class="fas fa-comments"></i>
+                                <span>AI Chat</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-analytics.html" class="menu-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-billing.html" class="menu-link">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Billing</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-team.html" class="menu-link">
+                                <i class="fas fa-users"></i>
+                                <span>Team</span>
+                            </a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="dashboard-settings.html" class="menu-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Settings</h1>
+                    <p>Manage your account settings and preferences</p>
+                </div>
+            </div>
+
+            <!-- Settings Navigation -->
+            <div class="settings-nav">
+                <button class="settings-nav-btn active" data-section="profile">Profile</button>
+                <button class="settings-nav-btn" data-section="security">Security</button>
+                <button class="settings-nav-btn" data-section="notifications">Notifications</button>
+                <button class="settings-nav-btn" data-section="preferences">Preferences</button>
+                <button class="settings-nav-btn" data-section="integrations">Integrations</button>
+                <button class="settings-nav-btn" data-section="api">API Keys</button>
+            </div>
+
+            <!-- Profile Settings -->
+            <div class="settings-section active" id="profile-section">
+                <div class="section-header">
+                    <h2>Profile Information</h2>
+                    <p>Update your personal information and profile details</p>
+                </div>
+                
+                <div class="settings-content">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%23a855f7'/%3E%3Ctext x='40' y='50' text-anchor='middle' fill='white' font-family='Arial' font-size='32' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="User Avatar">
+                            <button class="avatar-edit" onclick="changeAvatar()">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <div class="profile-info">
+                            <h3>John Smith</h3>
+                            <p>john.smith@company.com</p>
+                            <span class="member-since">Member since December 2023</span>
+                        </div>
+                    </div>
+                    
+                    <form class="settings-form" id="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="firstName" value="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="lastName" value="Smith" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" value="john.smith@company.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" value="Tech Solutions Inc.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="job-title">Job Title</label>
+                            <input type="text" id="job-title" name="jobTitle" value="Product Manager">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timezone">Timezone</label>
+                            <select id="timezone" name="timezone">
+                                <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                <option value="UTC-6">Central Time (UTC-6)</option>
+                                <option value="UTC-5" selected>Eastern Time (UTC-5)</option>
+                                <option value="UTC+0">UTC (UTC+0)</option>
+                                <option value="UTC+1">Central European Time (UTC+1)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="resetProfileForm()">Reset</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Security Settings -->
+            <div class="settings-section" id="security-section">
+                <div class="section-header">
+                    <h2>Security Settings</h2>
+                    <p>Manage your password and security preferences</p>
+                </div>
+                
+                <div class="settings-content">
+                    <div class="security-card">
+                        <div class="security-item">
+                            <div class="security-info">
+                                <h4>Password</h4>
+                                <p>Last changed 3 months ago</p>
+                            </div>
+                            <button class="btn btn-outline" onclick="changePassword()">Change Password</button>
+                        </div>
+                        
+                        <div class="security-item">
+                            <div class="security-info">
+                                <h4>Two-Factor Authentication</h4>
+                                <p>Add an extra layer of security to your account</p>
+                            </div>
+                            <div class="security-status">
+                                <span class="status-badge enabled">Enabled</span>
+                                <button class="btn btn-outline" onclick="manage2FA()">Manage</button>
+                            </div>
+                        </div>
+                        
+                        <div class="security-item">
+                            <div class="security-info">
+                                <h4>Login Sessions</h4>
+                                <p>Manage your active login sessions</p>
+                            </div>
+                            <button class="btn btn-outline" onclick="viewSessions()">View Sessions</button>
+                        </div>
+                    </div>
+                    
+                    <div class="security-history">
+                        <h3>Recent Security Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-key"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Password Changed</h4>
+                                    <p>Your password was successfully updated</p>
+                                    <span class="activity-time">3 months ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>2FA Enabled</h4>
+                                    <p>Two-factor authentication was enabled</p>
+                                    <span class="activity-time">6 months ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Login from New Device</h4>
+                                    <p>Successful login from Chrome on Windows</p>
+                                    <span class="activity-time">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications Settings -->
+            <div class="settings-section" id="notifications-section">
+                <div class="section-header">
+                    <h2>Notification Preferences</h2>
+                    <p>Choose how you want to be notified about important updates</p>
+                </div>
+                
+                <div class="settings-content">
+                    <div class="notification-categories">
+                        <div class="notification-category">
+                            <h3>Email Notifications</h3>
+                            <div class="notification-settings">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="notification-info">
+                                        <h4>Account Updates</h4>
+                                        <p>Password changes, security alerts, and account modifications</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="notification-info">
+                                        <h4>Billing & Payments</h4>
+                                        <p>Invoice reminders, payment confirmations, and billing updates</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="notification-info">
+                                        <h4>Product Updates</h4>
+                                        <p>New features, improvements, and platform announcements</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="notification-info">
+                                        <h4>Team Activity</h4>
+                                        <p>Team member invitations, role changes, and collaboration updates</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-category">
+                            <h3>Push Notifications</h3>
+                            <div class="notification-settings">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="notification-info">
+                                        <h4>Real-time Alerts</h4>
+                                        <p>Critical system alerts and urgent notifications</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="notification-info">
+                                        <h4>Marketing Updates</h4>
+                                        <p>Promotional offers, tips, and educational content</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferences Settings -->
+            <div class="settings-section" id="preferences-section">
+                <div class="section-header">
+                    <h2>Preferences</h2>
+                    <p>Customize your experience and interface preferences</p>
+                </div>
+                
+                <div class="settings-content">
+                    <div class="preferences-grid">
+                        <div class="preference-card">
+                            <h3>Appearance</h3>
+                            <div class="preference-settings">
+                                <div class="form-group">
+                                    <label for="theme-preference">Theme</label>
+                                    <select id="theme-preference">
+                                        <option value="light">Light</option>
+                                        <option value="dark">Dark</option>
+                                        <option value="auto">Auto (System)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="color-scheme">Color Scheme</label>
+                                    <select id="color-scheme">
+                                        <option value="purple">Purple</option>
+                                        <option value="neon">Neon</option>
+                                        <option value="minimal">Minimal</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="preference-card">
+                            <h3>Language & Region</h3>
+                            <div class="preference-settings">
+                                <div class="form-group">
+                                    <label for="language">Language</label>
+                                    <select id="language">
+                                        <option value="en" selected>English</option>
+                                        <option value="es">Spanish</option>
+                                        <option value="fr">French</option>
+                                        <option value="de">German</option>
+                                        <option value="zh">Chinese</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="date-format">Date Format</label>
+                                    <select id="date-format">
+                                        <option value="MM/DD/YYYY" selected>MM/DD/YYYY</option>
+                                        <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="preference-card">
+                            <h3>Data & Privacy</h3>
+                            <div class="preference-settings">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="notification-info">
+                                        <h4>Analytics & Usage Data</h4>
+                                        <p>Help us improve by sharing anonymous usage data</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <div class="notification-info">
+                                        <h4>Marketing Communications</h4>
+                                        <p>Receive promotional emails and product updates</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrations Settings -->
+            <div class="settings-section" id="integrations-section">
+                <div class="section-header">
+                    <h2>Integrations</h2>
+                    <p>Connect your favorite tools and services</p>
+                </div>
+                
+                <div class="settings-content">
+                    <div class="integrations-grid">
+                        <div class="integration-card">
+                            <div class="integration-icon">
+                                <i class="fab fa-slack"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h3>Slack</h3>
+                                <p>Get notifications and updates in your Slack workspace</p>
+                            </div>
+                            <div class="integration-status">
+                                <span class="status-badge connected">Connected</span>
+                                <button class="btn btn-outline" onclick="manageIntegration('slack')">Manage</button>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-card">
+                            <div class="integration-icon">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h3>Microsoft Teams</h3>
+                                <p>Integrate with your Teams workflow</p>
+                            </div>
+                            <div class="integration-status">
+                                <span class="status-badge disconnected">Not Connected</span>
+                                <button class="btn btn-primary" onclick="connectIntegration('teams')">Connect</button>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-card">
+                            <div class="integration-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h3>Google Workspace</h3>
+                                <p>Sync with Google Calendar and Drive</p>
+                            </div>
+                            <div class="integration-status">
+                                <span class="status-badge disconnected">Not Connected</span>
+                                <button class="btn btn-primary" onclick="connectIntegration('google')">Connect</button>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-card">
+                            <div class="integration-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h3>GitHub</h3>
+                                <p>Connect your GitHub repositories for automated workflows</p>
+                            </div>
+                            <div class="integration-status">
+                                <span class="status-badge connected">Connected</span>
+                                <button class="btn btn-outline" onclick="manageIntegration('github')">Manage</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Keys Settings -->
+            <div class="settings-section" id="api-section">
+                <div class="section-header">
+                    <h2>API Keys</h2>
+                    <p>Manage your API keys for programmatic access</p>
+                </div>
+                
+                <div class="settings-content">
+                    <div class="api-keys-section">
+                        <div class="api-key-card">
+                            <div class="api-key-info">
+                                <h3>Production API Key</h3>
+                                <p>Used for live applications and production environments</p>
+                                <div class="api-key-value">
+                                    <code>ak_live_1234567890abcdef</code>
+                                    <button class="btn-icon" onclick="copyApiKey('prod')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="api-key-actions">
+                                <span class="status-badge active">Active</span>
+                                <button class="btn btn-outline" onclick="regenerateApiKey('prod')">Regenerate</button>
+                            </div>
+                        </div>
+                        
+                        <div class="api-key-card">
+                            <div class="api-key-info">
+                                <h3>Test API Key</h3>
+                                <p>Used for development and testing purposes</p>
+                                <div class="api-key-value">
+                                    <code>ak_test_abcdef1234567890</code>
+                                    <button class="btn-icon" onclick="copyApiKey('test')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="api-key-actions">
+                                <span class="status-badge active">Active</span>
+                                <button class="btn btn-outline" onclick="regenerateApiKey('test')">Regenerate</button>
+                            </div>
+                        </div>
+                        
+                        <div class="api-key-card">
+                            <div class="api-key-info">
+                                <h3>Webhook Secret</h3>
+                                <p>Used to verify webhook signatures</p>
+                                <div class="api-key-value">
+                                    <code>whsec_1234567890abcdef</code>
+                                    <button class="btn-icon" onclick="copyApiKey('webhook')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="api-key-actions">
+                                <span class="status-badge active">Active</span>
+                                <button class="btn btn-outline" onclick="regenerateApiKey('webhook')">Regenerate</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="api-documentation">
+                        <h3>API Documentation</h3>
+                        <p>Learn how to use our API with comprehensive documentation and examples.</p>
+                        <a href="api.html" class="btn btn-outline">
+                            <i class="fas fa-book"></i>
+                            View Documentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
+    <script>
+        // Settings functionality
+        let currentSection = 'profile';
+
+        // Settings navigation
+        document.querySelectorAll('.settings-nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const section = this.dataset.section;
+                showSettingsSection(section);
+                
+                // Update active button
+                document.querySelectorAll('.settings-nav-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        function showSettingsSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.settings-section').forEach(s => s.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(section + '-section').classList.add('active');
+            currentSection = section;
+        }
+
+        // Profile form handling
+        document.getElementById('profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const saveBtn = this.querySelector('button[type="submit"]');
+            const originalText = saveBtn.innerHTML;
+            
+            saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+            saveBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Profile updated successfully!');
+                saveBtn.innerHTML = originalText;
+                saveBtn.disabled = false;
+            }, 1500);
+        });
+
+        function resetProfileForm() {
+            if (confirm('Are you sure you want to reset all changes?')) {
+                document.getElementById('profile-form').reset();
+            }
+        }
+
+        function changeAvatar() {
+            alert('Avatar change functionality would open here');
+        }
+
+        function changePassword() {
+            alert('Change password modal would open here');
+        }
+
+        function manage2FA() {
+            alert('2FA management modal would open here');
+        }
+
+        function viewSessions() {
+            alert('Login sessions modal would open here');
+        }
+
+        function manageIntegration(integration) {
+            alert(`Manage ${integration} integration modal would open here`);
+        }
+
+        function connectIntegration(integration) {
+            alert(`Connect ${integration} integration modal would open here`);
+        }
+
+        function copyApiKey(type) {
+            const apiKeys = {
+                'prod': 'ak_live_1234567890abcdef',
+                'test': 'ak_test_abcdef1234567890',
+                'webhook': 'whsec_1234567890abcdef'
+            };
+            
+            navigator.clipboard.writeText(apiKeys[type]).then(() => {
+                alert('API key copied to clipboard!');
+            });
+        }
+
+        function regenerateApiKey(type) {
+            if (confirm(`Are you sure you want to regenerate the ${type} API key? This will invalidate the current key.`)) {
+                alert(`${type} API key regenerated successfully!`);
+            }
+        }
+
+        // Initialize settings
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved preferences
+            loadPreferences();
+        });
+
+        function loadPreferences() {
+            // Load theme preference
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.getElementById('theme-preference').value = savedTheme;
+            
+            // Load color scheme preference
+            const savedColorScheme = localStorage.getItem('colorScheme') || 'purple';
+            document.getElementById('color-scheme').value = savedColorScheme;
+        }
+
+        // Save preferences when changed
+        document.getElementById('theme-preference').addEventListener('change', function() {
+            localStorage.setItem('theme', this.value);
+            // Apply theme change
+            document.body.className = `theme-${this.value} color-${localStorage.getItem('colorScheme') || 'purple'}`;
+        });
+
+        document.getElementById('color-scheme').addEventListener('change', function() {
+            localStorage.setItem('colorScheme', this.value);
+            // Apply color scheme change
+            document.body.className = `theme-${localStorage.getItem('theme') || 'light'} color-${this.value}`;
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

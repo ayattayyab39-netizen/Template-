@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - AI SaaS Template Kit</title>
+    <meta name="description" content="Stay updated with the latest AI trends, insights, and tutorials. Learn how to leverage AI for your business success.">
+    <!-- <!-- <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico"> --> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+<body class="theme-light color-purple">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="index.html" class="dropdown-link">Home 1 - Hero AI</a>
+                            <a href="home2.html" class="dropdown-link">Home 2 - Gradient Minimal</a>
+                            <a href="home3.html" class="dropdown-link">Home 3 - Dark Futuristic</a>
+                            <a href="home4.html" class="dropdown-link">Home 4 - Startup Growth</a>
+                            <a href="home5.html" class="dropdown-link">Home 5 - Product Demo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="dashboard.html" class="nav-link">Dashboard <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="dashboard.html" class="dropdown-link">Overview</a>
+                            <a href="dashboard-chat.html" class="dropdown-link">AI Chat</a>
+                            <a href="dashboard-analytics.html" class="dropdown-link">Analytics</a>
+                            <a href="dashboard-billing.html" class="dropdown-link">Billing</a>
+                            <a href="dashboard-team.html" class="dropdown-link">Team</a>
+                            <a href="dashboard-settings.html" class="dropdown-link">Settings</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </button>
+                <button class="color-scheme-toggle" id="color-scheme-toggle" title="Change Color Scheme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-blog">
+        <div class="hero-background">
+            <div class="gradient-orb gradient-orb-1"></div>
+            <div class="gradient-orb gradient-orb-2"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title">
+                    <span class="title-line">AI Insights &</span>
+                    <span class="title-line gradient-text">Industry News</span>
+                </h1>
+                <p class="hero-description">
+                    Stay ahead of the curve with the latest AI trends, tutorials, and insights 
+                    from industry experts. Learn how to leverage AI for your business success.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="categories-filter">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="tutorials">Tutorials</button>
+                <button class="category-btn" data-category="industry">Industry News</button>
+                <button class="category-btn" data-category="case-studies">Case Studies</button>
+                <button class="category-btn" data-category="ai-trends">AI Trends</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post-section">
+        <div class="container">
+            <div class="featured-post">
+                <div class="post-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f8fafc'/%3E%3Crect x='50' y='50' width='500' height='300' fill='%23e2e8f0'/%3E%3Ctext x='300' y='200' text-anchor='middle' fill='%2364748b' font-family='Arial' font-size='24'%3EFeatured Post Image%3C/text%3E%3C/svg%3E" alt="Featured Post">
+                    <div class="post-category">Featured</div>
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-date">December 15, 2024</span>
+                        <span class="post-category-tag">AI Trends</span>
+                        <span class="post-read-time">5 min read</span>
+                    </div>
+                    <h2 class="post-title">
+                        <a href="blog-post.html">The Future of AI in Business: 2025 Predictions</a>
+                    </h2>
+                    <p class="post-excerpt">
+                        Discover the top AI trends that will shape business in 2025. From advanced automation 
+                        to personalized customer experiences, learn how to prepare your organization for the AI revolution.
+                    </p>
+                    <div class="post-author">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23a855f7'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3EJS%3C/text%3E%3C/svg%3E" alt="John Smith">
+                        <div class="author-info">
+                            <span class="author-name">John Smith</span>
+                            <span class="author-title">AI Research Lead</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid + Sidebar -->
+    <section class="blog-posts-section">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Main Posts -->
+                <div>
+                    <div class="blog-posts-grid">
+                <article class="blog-post" data-category="tutorials">
+                    <div class="post-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f8fafc'/%3E%3Crect x='25' y='25' width='350' height='200' fill='%23e2e8f0'/%3E%3Ctext x='200' y='130' text-anchor='middle' fill='%2364748b' font-family='Arial' font-size='18'%3ETutorial Image%3C/text%3E%3C/svg%3E" alt="Tutorial">
+                        <div class="post-category">Tutorial</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 12, 2024</span>
+                            <span class="post-read-time">8 min read</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog-post.html">How to Build Your First AI Model: A Step-by-Step Guide</a>
+                        </h3>
+                        <p class="post-excerpt">
+                            Learn the fundamentals of machine learning and build your first AI model from scratch. 
+                            Perfect for beginners who want to understand the basics.
+                        </p>
+                        <div class="post-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%239333ea'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='12' font-weight='bold'%3ESJ%3C/text%3E%3C/svg%3E" alt="Sarah Johnson">
+                            <span class="author-name">Sarah Johnson</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="case-studies">
+                    <div class="post-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f8fafc'/%3E%3Crect x='25' y='25' width='350' height='200' fill='%23e2e8f0'/%3E%3Ctext x='200' y='130' text-anchor='middle' fill='%2364748b' font-family='Arial' font-size='18'%3ECase Study Image%3C/text%3E%3C/svg%3E" alt="Case Study">
+                        <div class="post-category">Case Study</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 10, 2024</span>
+                            <span class="post-read-time">6 min read</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog-post.html">How TechCorp Increased Efficiency by 300% with AI Automation</a>
+                        </h3>
+                        <p class="post-excerpt">
+                            A detailed case study showing how a mid-size company transformed their operations 
+                            using our AI platform and achieved remarkable results.
+                        </p>
+                        <div class="post-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%237c3aed'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='12' font-weight='bold'%3EMD%3C/text%3E%3C/svg%3E" alt="Mike Davis">
+                            <span class="author-name">Mike Davis</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="industry">
+                    <div class="post-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f8fafc'/%3E%3Crect x='25' y='25' width='350' height='200' fill='%23e2e8f0'/%3E%3Ctext x='200' y='130' text-anchor='middle' fill='%2364748b' font-family='Arial' font-size='18'%3EIndustry News%3C/text%3E%3C/svg%3E" alt="Industry News">
+                        <div class="post-category">Industry</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 8, 2024</span>
+                            <span class="post-read-time">4 min read</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog-post.html">New AI Regulations: What Businesses Need to Know</a>
+                        </h3>
+                        <p class="post-excerpt">
+                            Stay compliant with the latest AI regulations and understand how they affect 
+                            your business operations and data handling practices.
+                        </p>
+                        <div class="post-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a855f7'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='12' font-weight='bold'%3EJS%3C/text%3E%3C/svg%3E" alt="John Smith">
+                            <span class="author-name">John Smith</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="ai-trends">
+                    <div class="post-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f8fafc'/%3E%3Crect x='25' y='25' width='350' height='200' fill='%23e2e8f0'/%3E%3Ctext x='200' y='130' text-anchor='middle' fill='%2364748b' font-family='Arial' font-size='18'%3EAI Trends%3C/text%3E%3C/svg%3E" alt="AI Trends">
+                        <div class="post-category">AI Trends</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 5, 2024</span>
+                            <span class="post-read-time">7 min read</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog-post.html">The Rise of Conversational AI: Beyond Chatbots</a>
+                        </h3>
+                        <p class="post-excerpt">
+                            Explore how conversational AI is evolving beyond simple chatbots to become 
+                            sophisticated virtual assistants that understand context and emotion.
+                        </p>
+                        <div class="post-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%239333ea'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='12' font-weight='bold'%3ESJ%3C/text%3E%3C/svg%3E" alt="Sarah Johnson">
+                            <span class="author-name">Sarah Johnson</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="tutorials">
+                    <div class="post-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f8fafc'/%3E%3Crect x='25' y='25' width='350' height='200' fill='%23e2e8f0'/%3E%3Ctext x='200' y='130' text-anchor='middle' fill='%2364748b' font-family='Arial' font-size='18'%3ETutorial Image%3C/text%3E%3C/svg%3E" alt="Tutorial">
+                        <div class="post-category">Tutorial</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 3, 2024</span>
+                            <span class="post-read-time">10 min read</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog-post.html">Integrating AI APIs: A Developer's Complete Guide</a>
+                        </h3>
+                        <p class="post-excerpt">
+                            Learn how to integrate AI APIs into your applications with practical examples, 
+                            code snippets, and best practices for developers.
+                        </p>
+                        <div class="post-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%237c3aed'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='12' font-weight='bold'%3EMD%3C/text%3E%3C/svg%3E" alt="Mike Davis">
+                            <span class="author-name">Mike Davis</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="case-studies">
+                    <div class="post-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f8fafc'/%3E%3Crect x='25' y='25' width='350' height='200' fill='%23e2e8f0'/%3E%3Ctext x='200' y='130' text-anchor='middle' fill='%2364748b' font-family='Arial' font-size='18'%3ECase Study Image%3C/text%3E%3C/svg%3E" alt="Case Study">
+                        <div class="post-category">Case Study</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 1, 2024</span>
+                            <span class="post-read-time">5 min read</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog-post.html">E-commerce Success: AI-Powered Personalization</a>
+                        </h3>
+                        <p class="post-excerpt">
+                            Discover how an online retailer increased sales by 150% using AI-powered 
+                            product recommendations and personalized shopping experiences.
+                        </p>
+                        <div class="post-author">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a855f7'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='12' font-weight='bold'%3EJS%3C/text%3E%3C/svg%3E" alt="John Smith">
+                            <span class="author-name">John Smith</span>
+                        </div>
+                    </div>
+                </article>
+                    </div>
+                    <!-- Load More Button -->
+                    <div class="load-more-section">
+                        <button class="btn btn-outline btn-large" id="load-more-btn">
+                            <i class="fas fa-plus"></i>
+                            Load More Posts
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <!-- Search Widget -->
+                    <div class="widget widget-search">
+                        <h4>Search</h4>
+                        <div class="widget-body">
+                            <div class="search-input">
+                                <input type="text" placeholder="Search articles...">
+                                <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Posts Widget -->
+                    <div class="widget widget-popular">
+                        <h4>Popular Posts</h4>
+                        <div class="widget-body">
+                            <div class="popular-list">
+                                <div class="popular-item">
+                                    <div class="popular-thumb"></div>
+                                    <div>
+                                        <div class="popular-meta">Dec 12 • 8 min</div>
+                                        <div class="popular-title"><a href="blog-post.html">How to Build Your First AI Model</a></div>
+                                    </div>
+                                </div>
+                                <div class="popular-item">
+                                    <div class="popular-thumb"></div>
+                                    <div>
+                                        <div class="popular-meta">Dec 5 • 7 min</div>
+                                        <div class="popular-title"><a href="blog-post.html">Conversational AI: Beyond Chatbots</a></div>
+                                    </div>
+                                </div>
+                                <div class="popular-item">
+                                    <div class="popular-thumb"></div>
+                                    <div>
+                                        <div class="popular-meta">Dec 1 • 5 min</div>
+                                        <div class="popular-title"><a href="blog-post.html">AI‑Powered Personalization Wins</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="widget widget-categories">
+                        <h4>Categories</h4>
+                        <div class="widget-body">
+                            <ul class="category-list">
+                                <li><span>Tutorials</span><span>12</span></li>
+                                <li><span>AI Trends</span><span>9</span></li>
+                                <li><span>Industry</span><span>7</span></li>
+                                <li><span>Case Studies</span><span>5</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tags Widget -->
+                    <div class="widget widget-tags">
+                        <h4>Tags</h4>
+                        <div class="widget-body">
+                            <div class="tag-cloud">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Automation</span>
+                                <span class="tag">Analytics</span>
+                                <span class="tag">APIs</span>
+                                <span class="tag">Security</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Newsletter Widget -->
+                    <div class="widget widget-newsletter">
+                        <h4>Subscribe</h4>
+                        <div class="widget-body">
+                            <p>Get weekly insights and tutorials in your inbox.</p>
+                            <div class="search-input">
+                                <input type="email" placeholder="Email address">
+                                <button class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Stay Updated</h2>
+                <p class="newsletter-description">
+                    Get the latest AI insights, tutorials, and industry news delivered to your inbox.
+                </p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                    <p class="newsletter-privacy">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                    </a>
+                    <p class="footer-description">
+                        The most powerful AI SaaS platform for modern businesses. 
+                        Build, scale, and grow with artificial intelligence.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="api.html">API</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="status.html">Status</a></li>
+                        <li><a href="security.html">Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="gdpr.html">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 AI SaaS Template Kit. All rights reserved.
+                </p>
+                <div class="footer-social">
+                    <a href="https://twitter.com" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://discord.com" class="social-link" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script>
+        // Blog category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const blogPosts = document.querySelectorAll('.blog-post');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter posts
+                    blogPosts.forEach(post => {
+                        if (category === 'all' || post.dataset.category === category) {
+                            post.style.display = 'block';
+                        } else {
+                            post.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

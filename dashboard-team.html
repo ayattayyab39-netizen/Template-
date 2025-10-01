@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Management - Dashboard</title>
+    <meta name="description" content="Manage your team members, invite new users, and assign roles and permissions for your AI platform.">
+    <!-- <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
+<body class="theme-light color-purple">
+    <!-- Dashboard Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </button>
+                <button class="color-scheme-toggle" id="color-scheme-toggle" title="Change Color Scheme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a855f7'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='14' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="User">
+                    </div>
+                    <span class="user-name">User</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3>Dashboard</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul class="sidebar-menu">
+                        <li class="menu-item">
+                            <a href="dashboard.html" class="menu-link">
+                                <i class="fas fa-home"></i>
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-chat.html" class="menu-link">
+                                <i class="fas fa-comments"></i>
+                                <span>AI Chat</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-analytics.html" class="menu-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-billing.html" class="menu-link">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Billing</span>
+                            </a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="dashboard-team.html" class="menu-link">
+                                <i class="fas fa-users"></i>
+                                <span>Team</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-settings.html" class="menu-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Team Management</h1>
+                    <p>Manage team members, roles, and permissions</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-outline" onclick="exportTeamData()">
+                        <i class="fas fa-download"></i>
+                        Export Team
+                    </button>
+                    <button class="btn btn-primary" onclick="openInviteModal()">
+                        <i class="fas fa-user-plus"></i>
+                        Invite Member
+                    </button>
+                </div>
+            </div>
+
+            <!-- Team Stats -->
+            <div class="team-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>12</h3>
+                        <p>Total Members</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>10</h3>
+                        <p>Active Members</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>2</h3>
+                        <p>Pending Invites</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>3</h3>
+                        <p>Admin Users</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Members Table -->
+            <div class="team-section">
+                <div class="section-header">
+                    <h2>Team Members</h2>
+                    <div class="section-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search members..." id="member-search">
+                        </div>
+                        <div class="filter-dropdown">
+                            <select id="role-filter">
+                                <option value="all">All Roles</option>
+                                <option value="admin">Admin</option>
+                                <option value="manager">Manager</option>
+                                <option value="developer">Developer</option>
+                                <option value="viewer">Viewer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-table-container">
+                    <table class="team-table">
+                        <thead>
+                            <tr>
+                                <th>Member</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Last Active</th>
+                                <th>Permissions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="team-table-body">
+                            <tr>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-avatar">
+                                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23a855f7'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3EJS%3C/text%3E%3C/svg%3E" alt="John Smith">
+                                        </div>
+                                        <div class="member-details">
+                                            <h4>John Smith</h4>
+                                            <p>john.smith@company.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="role-badge admin">Admin</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge active">Active</span>
+                                </td>
+                                <td>2 hours ago</td>
+                                <td>
+                                    <div class="permissions">
+                                        <span class="permission-tag">Full Access</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon" onclick="editMember(1)" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon" onclick="viewMember(1)" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon danger" onclick="removeMember(1)" title="Remove">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-avatar">
+                                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%239333ea'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3ESJ%3C/text%3E%3C/svg%3E" alt="Sarah Johnson">
+                                        </div>
+                                        <div class="member-details">
+                                            <h4>Sarah Johnson</h4>
+                                            <p>sarah.johnson@company.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="role-badge manager">Manager</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge active">Active</span>
+                                </td>
+                                <td>1 day ago</td>
+                                <td>
+                                    <div class="permissions">
+                                        <span class="permission-tag">Analytics</span>
+                                        <span class="permission-tag">Team</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon" onclick="editMember(2)" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon" onclick="viewMember(2)" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon danger" onclick="removeMember(2)" title="Remove">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-avatar">
+                                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237c3aed'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3EMD%3C/text%3E%3C/svg%3E" alt="Mike Davis">
+                                        </div>
+                                        <div class="member-details">
+                                            <h4>Mike Davis</h4>
+                                            <p>mike.davis@company.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="role-badge developer">Developer</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge active">Active</span>
+                                </td>
+                                <td>30 minutes ago</td>
+                                <td>
+                                    <div class="permissions">
+                                        <span class="permission-tag">API</span>
+                                        <span class="permission-tag">Analytics</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon" onclick="editMember(3)" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon" onclick="viewMember(3)" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon danger" onclick="removeMember(3)" title="Remove">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-avatar">
+                                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%236b7280'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3EAL%3C/text%3E%3C/svg%3E" alt="Alex Lee">
+                                        </div>
+                                        <div class="member-details">
+                                            <h4>Alex Lee</h4>
+                                            <p>alex.lee@company.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="role-badge viewer">Viewer</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge pending">Pending</span>
+                                </td>
+                                <td>Never</td>
+                                <td>
+                                    <div class="permissions">
+                                        <span class="permission-tag">Read Only</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon" onclick="resendInvite(4)" title="Resend Invite">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </button>
+                                        <button class="btn-icon danger" onclick="cancelInvite(4)" title="Cancel Invite">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Role Management -->
+            <div class="roles-section">
+                <div class="section-header">
+                    <h2>Role Management</h2>
+                    <button class="btn btn-outline" onclick="openRoleModal()">
+                        <i class="fas fa-plus"></i>
+                        Create Role
+                    </button>
+                </div>
+                
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <div class="role-header">
+                            <h3>Admin</h3>
+                            <span class="role-count">3 members</span>
+                        </div>
+                        <p class="role-description">Full access to all features and settings</p>
+                        <div class="role-permissions">
+                            <span class="permission-tag">All Permissions</span>
+                        </div>
+                        <div class="role-actions">
+                            <button class="btn btn-outline btn-sm" onclick="editRole('admin')">Edit</button>
+                            <button class="btn btn-outline btn-sm danger" onclick="deleteRole('admin')">Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="role-card">
+                        <div class="role-header">
+                            <h3>Manager</h3>
+                            <span class="role-count">2 members</span>
+                        </div>
+                        <p class="role-description">Access to analytics, team management, and most features</p>
+                        <div class="role-permissions">
+                            <span class="permission-tag">Analytics</span>
+                            <span class="permission-tag">Team</span>
+                            <span class="permission-tag">Billing</span>
+                        </div>
+                        <div class="role-actions">
+                            <button class="btn btn-outline btn-sm" onclick="editRole('manager')">Edit</button>
+                            <button class="btn btn-outline btn-sm danger" onclick="deleteRole('manager')">Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="role-card">
+                        <div class="role-header">
+                            <h3>Developer</h3>
+                            <span class="role-count">4 members</span>
+                        </div>
+                        <p class="role-description">Access to API, analytics, and development tools</p>
+                        <div class="role-permissions">
+                            <span class="permission-tag">API</span>
+                            <span class="permission-tag">Analytics</span>
+                            <span class="permission-tag">Chat</span>
+                        </div>
+                        <div class="role-actions">
+                            <button class="btn btn-outline btn-sm" onclick="editRole('developer')">Edit</button>
+                            <button class="btn btn-outline btn-sm danger" onclick="deleteRole('developer')">Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="role-card">
+                        <div class="role-header">
+                            <h3>Viewer</h3>
+                            <span class="role-count">3 members</span>
+                        </div>
+                        <p class="role-description">Read-only access to analytics and reports</p>
+                        <div class="role-permissions">
+                            <span class="permission-tag">Analytics</span>
+                            <span class="permission-tag">Reports</span>
+                        </div>
+                        <div class="role-actions">
+                            <button class="btn btn-outline btn-sm" onclick="editRole('viewer')">Edit</button>
+                            <button class="btn btn-outline btn-sm danger" onclick="deleteRole('viewer')">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Invite Member Modal -->
+    <div class="modal" id="invite-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Invite Team Member</h3>
+                <button class="modal-close" onclick="closeInviteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="invite-form">
+                    <div class="form-group">
+                        <label for="invite-email">Email Address *</label>
+                        <input type="email" id="invite-email" name="email" required placeholder="colleague@company.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="invite-role">Role *</label>
+                        <select id="invite-role" name="role" required>
+                            <option value="">Select a role</option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
+                            <option value="developer">Developer</option>
+                            <option value="viewer">Viewer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="invite-message">Personal Message (Optional)</label>
+                        <textarea id="invite-message" name="message" rows="3" placeholder="Add a personal message to the invitation..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="send-now" checked>
+                            <span class="checkmark"></span>
+                            Send invitation immediately
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeInviteModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="sendInvite()">Send Invitation</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Member Modal -->
+    <div class="modal" id="edit-member-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Team Member</h3>
+                <button class="modal-close" onclick="closeEditModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-member-form">
+                    <div class="form-group">
+                        <label for="edit-name">Full Name *</label>
+                        <input type="text" id="edit-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-email">Email Address *</label>
+                        <input type="email" id="edit-email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-role">Role *</label>
+                        <select id="edit-role" name="role" required>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
+                            <option value="developer">Developer</option>
+                            <option value="viewer">Viewer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Permissions</label>
+                        <div class="permissions-grid">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="permissions" value="analytics">
+                                <span class="checkmark"></span>
+                                Analytics
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="permissions" value="team">
+                                <span class="checkmark"></span>
+                                Team Management
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="permissions" value="billing">
+                                <span class="checkmark"></span>
+                                Billing
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="permissions" value="api">
+                                <span class="checkmark"></span>
+                                API Access
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="permissions" value="settings">
+                                <span class="checkmark"></span>
+                                Settings
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="permissions" value="chat">
+                                <span class="checkmark"></span>
+                                AI Chat
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeEditModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveMember()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
+    <script>
+        // Team management functionality
+        let currentMemberId = null;
+
+        function openInviteModal() {
+            document.getElementById('invite-modal').classList.add('active');
+        }
+
+        function closeInviteModal() {
+            document.getElementById('invite-modal').classList.remove('active');
+            document.getElementById('invite-form').reset();
+        }
+
+        function sendInvite() {
+            const form = document.getElementById('invite-form');
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            if (!data.email || !data.role) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate sending invitation
+            const sendBtn = document.querySelector('.btn[onclick="sendInvite()"]');
+            const originalText = sendBtn.innerHTML;
+            
+            sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            sendBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert(`Invitation sent to ${data.email} with ${data.role} role!`);
+                closeInviteModal();
+                sendBtn.innerHTML = originalText;
+                sendBtn.disabled = false;
+                
+                // Add to table (in real app, this would be handled by backend)
+                addMemberToTable({
+                    name: data.email.split('@')[0],
+                    email: data.email,
+                    role: data.role,
+                    status: 'pending'
+                });
+            }, 2000);
+        }
+
+        function addMemberToTable(member) {
+            const tbody = document.getElementById('team-table-body');
+            const row = document.createElement('tr');
+            
+            row.innerHTML = `
+                <td>
+                    <div class="member-info">
+                        <div class="member-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%236b7280'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3E${member.name.charAt(0).toUpperCase()}%3C/text%3E%3C/svg%3E" alt="${member.name}">
+                        </div>
+                        <div class="member-details">
+                            <h4>${member.name}</h4>
+                            <p>${member.email}</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="role-badge ${member.role}">${member.role.charAt(0).toUpperCase() + member.role.slice(1)}</span>
+                </td>
+                <td>
+                    <span class="status-badge ${member.status}">${member.status.charAt(0).toUpperCase() + member.status.slice(1)}</span>
+                </td>
+                <td>Never</td>
+                <td>
+                    <div class="permissions">
+                        <span class="permission-tag">Pending</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-icon" onclick="resendInvite(${Date.now()})" title="Resend Invite">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <button class="btn-icon danger" onclick="cancelInvite(${Date.now()})" title="Cancel Invite">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </td>
+            `;
+            
+            tbody.appendChild(row);
+        }
+
+        function editMember(id) {
+            currentMemberId = id;
+            // In a real app, you would fetch member data from backend
+            const memberData = {
+                name: 'John Smith',
+                email: 'john.smith@company.com',
+                role: 'admin',
+                permissions: ['analytics', 'team', 'billing', 'api', 'settings', 'chat']
+            };
+            
+            // Populate form
+            document.getElementById('edit-name').value = memberData.name;
+            document.getElementById('edit-email').value = memberData.email;
+            document.getElementById('edit-role').value = memberData.role;
+            
+            // Check permissions
+            document.querySelectorAll('input[name="permissions"]').forEach(checkbox => {
+                checkbox.checked = memberData.permissions.includes(checkbox.value);
+            });
+            
+            document.getElementById('edit-member-modal').classList.add('active');
+        }
+
+        function closeEditModal() {
+            document.getElementById('edit-member-modal').classList.remove('active');
+            currentMemberId = null;
+        }
+
+        function saveMember() {
+            const form = document.getElementById('edit-member-form');
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate saving
+            const saveBtn = document.querySelector('.btn[onclick="saveMember()"]');
+            const originalText = saveBtn.innerHTML;
+            
+            saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+            saveBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Member updated successfully!');
+                closeEditModal();
+                saveBtn.innerHTML = originalText;
+                saveBtn.disabled = false;
+            }, 1500);
+        }
+
+        function viewMember(id) {
+            alert(`Viewing details for member ${id}`);
+        }
+
+        function removeMember(id) {
+            if (confirm('Are you sure you want to remove this team member?')) {
+                // Simulate removal
+                alert('Team member removed successfully!');
+            }
+        }
+
+        function resendInvite(id) {
+            alert('Invitation resent successfully!');
+        }
+
+        function cancelInvite(id) {
+            if (confirm('Are you sure you want to cancel this invitation?')) {
+                alert('Invitation cancelled successfully!');
+            }
+        }
+
+        function exportTeamData() {
+            const teamData = {
+                members: [
+                    {name: 'John Smith', email: 'john.smith@company.com', role: 'Admin', status: 'Active'},
+                    {name: 'Sarah Johnson', email: 'sarah.johnson@company.com', role: 'Manager', status: 'Active'},
+                    {name: 'Mike Davis', email: 'mike.davis@company.com', role: 'Developer', status: 'Active'}
+                ],
+                roles: [
+                    {name: 'Admin', count: 3, permissions: ['All']},
+                    {name: 'Manager', count: 2, permissions: ['Analytics', 'Team', 'Billing']},
+                    {name: 'Developer', count: 4, permissions: ['API', 'Analytics', 'Chat']},
+                    {name: 'Viewer', count: 3, permissions: ['Analytics', 'Reports']}
+                ]
+            };
+            
+            const dataStr = JSON.stringify(teamData, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'team-data.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function openRoleModal() {
+            alert('Create role modal would open here');
+        }
+
+        function editRole(role) {
+            alert(`Edit ${role} role modal would open here`);
+        }
+
+        function deleteRole(role) {
+            if (confirm(`Are you sure you want to delete the ${role} role?`)) {
+                alert(`${role} role deleted successfully!`);
+            }
+        }
+
+        // Search and filter functionality
+        document.getElementById('member-search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#team-table-body tr');
+            
+            rows.forEach(row => {
+                const name = row.querySelector('.member-details h4').textContent.toLowerCase();
+                const email = row.querySelector('.member-details p').textContent.toLowerCase();
+                
+                if (name.includes(searchTerm) || email.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('role-filter').addEventListener('change', function() {
+            const filterValue = this.value;
+            const rows = document.querySelectorAll('#team-table-body tr');
+            
+            rows.forEach(row => {
+                if (filterValue === 'all') {
+                    row.style.display = '';
+                } else {
+                    const role = row.querySelector('.role-badge').textContent.toLowerCase();
+                    if (role.includes(filterValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

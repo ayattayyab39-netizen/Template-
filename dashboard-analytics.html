@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Dashboard</title>
+    <meta name="description" content="Comprehensive analytics dashboard with real-time insights, charts, and data visualization for your AI platform.">
+    <!-- <!-- <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico"> --> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="theme-light color-purple">
+    <!-- Dashboard Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-text">AI<span class="gradient-text">SaaS</span></span>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </button>
+                <button class="color-scheme-toggle" id="color-scheme-toggle" title="Change Color Scheme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a855f7'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-family='Arial' font-size='14' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="User">
+                    </div>
+                    <span class="user-name">User</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3>Dashboard</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul class="sidebar-menu">
+                        <li class="menu-item">
+                            <a href="dashboard.html" class="menu-link">
+                                <i class="fas fa-home"></i>
+                                <span>Overview</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-chat.html" class="menu-link">
+                                <i class="fas fa-comments"></i>
+                                <span>AI Chat</span>
+                            </a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="dashboard-analytics.html" class="menu-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-billing.html" class="menu-link">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Billing</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-team.html" class="menu-link">
+                                <i class="fas fa-users"></i>
+                                <span>Team</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="dashboard-settings.html" class="menu-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Analytics Dashboard</h1>
+                    <p>Comprehensive insights and performance metrics</p>
+                </div>
+                <div class="page-actions">
+                    <div class="date-range-picker">
+                        <select id="date-range">
+                            <option value="7">Last 7 days</option>
+                            <option value="30" selected>Last 30 days</option>
+                            <option value="90">Last 90 days</option>
+                            <option value="365">Last year</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-outline" onclick="refreshData()">
+                        <i class="fas fa-sync-alt"></i>
+                        Refresh
+                    </button>
+                    <button class="btn btn-primary" onclick="exportData()">
+                        <i class="fas fa-download"></i>
+                        Export Data
+                    </button>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Total Users</h3>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="metric-value">12,543</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +12.5% from last month
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>API Calls</h3>
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="metric-value">2.4M</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +8.3% from last month
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Revenue</h3>
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="metric-value">$45,230</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +15.7% from last month
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Active Sessions</h3>
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="metric-value">3,247</div>
+                    <div class="metric-change negative">
+                        <i class="fas fa-arrow-down"></i>
+                        -2.1% from last month
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>User Growth Trend</h3>
+                        <div class="chart-controls">
+                            <button class="chart-btn active" data-chart="line">Line</button>
+                            <button class="chart-btn" data-chart="bar">Bar</button>
+                            <button class="chart-btn" data-chart="area">Area</button>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="userGrowthChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>API Usage by Endpoint</h3>
+                        <div class="chart-controls">
+                            <button class="chart-btn active" data-chart="doughnut">Doughnut</button>
+                            <button class="chart-btn" data-chart="pie">Pie</button>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="apiUsageChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="performance-section">
+                <div class="section-header">
+                    <h2>Performance Metrics</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline" onclick="exportPerformanceData()">
+                            <i class="fas fa-download"></i>
+                            Export Performance
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="performance-grid">
+                    <div class="performance-card">
+                        <h4>Response Time</h4>
+                        <div class="performance-value">245ms</div>
+                        <div class="performance-chart">
+                            <canvas id="responseTimeChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-card">
+                        <h4>Uptime</h4>
+                        <div class="performance-value">99.9%</div>
+                        <div class="performance-chart">
+                            <canvas id="uptimeChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-card">
+                        <h4>Error Rate</h4>
+                        <div class="performance-value">0.02%</div>
+                        <div class="performance-chart">
+                            <canvas id="errorRateChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="data-table-section">
+                <div class="section-header">
+                    <h2>Recent Activity</h2>
+                    <div class="section-actions">
+                        <div class="table-filters">
+                            <select id="activity-filter">
+                                <option value="all">All Activities</option>
+                                <option value="api">API Calls</option>
+                                <option value="user">User Actions</option>
+                                <option value="system">System Events</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-outline" onclick="exportActivityData()">
+                            <i class="fas fa-download"></i>
+                            Export Activity
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Event Type</th>
+                                <th>Description</th>
+                                <th>User</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activity-table-body">
+                            <tr>
+                                <td>2024-12-15 14:30:25</td>
+                                <td><span class="event-type api">API Call</span></td>
+                                <td>POST /api/v1/analyze</td>
+                                <td>john@example.com</td>
+                                <td><span class="status success">Success</span></td>
+                                <td><button class="btn-icon" onclick="viewDetails(1)"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>2024-12-15 14:28:12</td>
+                                <td><span class="event-type user">User Action</span></td>
+                                <td>Dashboard login</td>
+                                <td>sarah@example.com</td>
+                                <td><span class="status success">Success</span></td>
+                                <td><button class="btn-icon" onclick="viewDetails(2)"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>2024-12-15 14:25:45</td>
+                                <td><span class="event-type system">System Event</span></td>
+                                <td>Data backup completed</td>
+                                <td>System</td>
+                                <td><span class="status success">Success</span></td>
+                                <td><button class="btn-icon" onclick="viewDetails(3)"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>2024-12-15 14:22:18</td>
+                                <td><span class="event-type api">API Call</span></td>
+                                <td>GET /api/v1/analytics</td>
+                                <td>mike@example.com</td>
+                                <td><span class="status error">Error</span></td>
+                                <td><button class="btn-icon" onclick="viewDetails(4)"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>2024-12-15 14:20:33</td>
+                                <td><span class="event-type user">User Action</span></td>
+                                <td>Export data request</td>
+                                <td>alex@example.com</td>
+                                <td><span class="status success">Success</span></td>
+                                <td><button class="btn-icon" onclick="viewDetails(5)"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Export Modal -->
+    <div class="modal" id="export-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Export Data</h3>
+                <button class="modal-close" onclick="closeExportModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="export-options">
+                    <div class="export-option">
+                        <label class="option-label">
+                            <input type="radio" name="export-type" value="csv" checked>
+                            <span class="radio-mark"></span>
+                            CSV Format
+                        </label>
+                        <p class="option-description">Comma-separated values, compatible with Excel</p>
+                    </div>
+                    <div class="export-option">
+                        <label class="option-label">
+                            <input type="radio" name="export-type" value="json">
+                            <span class="radio-mark"></span>
+                            JSON Format
+                        </label>
+                        <p class="option-description">JavaScript Object Notation, for developers</p>
+                    </div>
+                    <div class="export-option">
+                        <label class="option-label">
+                            <input type="radio" name="export-type" value="pdf">
+                            <span class="radio-mark"></span>
+                            PDF Report
+                        </label>
+                        <p class="option-description">Formatted report with charts and tables</p>
+                    </div>
+                </div>
+                <div class="export-date-range">
+                    <label for="export-date-range">Date Range</label>
+                    <select id="export-date-range">
+                        <option value="7">Last 7 days</option>
+                        <option value="30" selected>Last 30 days</option>
+                        <option value="90">Last 90 days</option>
+                        <option value="365">Last year</option>
+                        <option value="custom">Custom range</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeExportModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="confirmExport()">Export Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
+    <script>
+        // Chart.js configurations
+        let userGrowthChart, apiUsageChart, responseTimeChart, uptimeChart, errorRateChart;
+
+        // Initialize charts
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            loadActivityData();
+        });
+
+        function initializeCharts() {
+            // User Growth Chart
+            const userGrowthCtx = document.getElementById('userGrowthChart').getContext('2d');
+            userGrowthChart = new Chart(userGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'New Users',
+                        data: [1200, 1900, 3000, 5000, 2000, 3000, 4500, 3800, 4200, 5100, 4800, 5500],
+                        borderColor: '#a855f7',
+                        backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // API Usage Chart
+            const apiUsageCtx = document.getElementById('apiUsageChart').getContext('2d');
+            apiUsageChart = new Chart(apiUsageCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Authentication', 'Data Analysis', 'AI Chat', 'File Upload', 'Export'],
+                    datasets: [{
+                        data: [30, 25, 20, 15, 10],
+                        backgroundColor: [
+                            '#a855f7',
+                            '#9333ea',
+                            '#7c3aed',
+                            '#6d28d9',
+                            '#5b21b6'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Performance Charts
+            initializePerformanceCharts();
+        }
+
+        function initializePerformanceCharts() {
+            // Response Time Chart
+            const responseTimeCtx = document.getElementById('responseTimeChart').getContext('2d');
+            responseTimeChart = new Chart(responseTimeCtx, {
+                type: 'line',
+                data: {
+                    labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+                    datasets: [{
+                        data: [200, 250, 300, 280, 240, 220],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            // Uptime Chart
+            const uptimeCtx = document.getElementById('uptimeChart').getContext('2d');
+            uptimeChart = new Chart(uptimeCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        data: [99.9, 99.8, 99.9, 99.7, 99.9, 99.9, 99.8],
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            // Error Rate Chart
+            const errorRateCtx = document.getElementById('errorRateChart').getContext('2d');
+            errorRateChart = new Chart(errorRateCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        data: [0.01, 0.02, 0.015, 0.03, 0.01, 0.02, 0.025],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+        }
+
+        function refreshData() {
+            // Simulate data refresh
+            const refreshBtn = document.querySelector('.btn[onclick="refreshData()"]');
+            const originalText = refreshBtn.innerHTML;
+            
+            refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+            refreshBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Update metrics with new data
+                updateMetrics();
+                refreshBtn.innerHTML = originalText;
+                refreshBtn.disabled = false;
+                alert('Data refreshed successfully!');
+            }, 2000);
+        }
+
+        function updateMetrics() {
+            // Simulate updating metrics with new data
+            const metrics = document.querySelectorAll('.metric-value');
+            metrics.forEach(metric => {
+                const currentValue = parseInt(metric.textContent.replace(/[^\d]/g, ''));
+                const newValue = currentValue + Math.floor(Math.random() * 100);
+                metric.textContent = newValue.toLocaleString();
+            });
+        }
+
+        function exportData() {
+            document.getElementById('export-modal').classList.add('active');
+        }
+
+        function closeExportModal() {
+            document.getElementById('export-modal').classList.remove('active');
+        }
+
+        function confirmExport() {
+            const exportType = document.querySelector('input[name="export-type"]:checked').value;
+            const dateRange = document.getElementById('export-date-range').value;
+            
+            // Simulate export process
+            const exportBtn = document.querySelector('.btn[onclick="confirmExport()"]');
+            const originalText = exportBtn.innerHTML;
+            
+            exportBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Exporting...';
+            exportBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Generate and download file
+                generateExportFile(exportType, dateRange);
+                
+                exportBtn.innerHTML = originalText;
+                exportBtn.disabled = false;
+                closeExportModal();
+                
+                alert(`Data exported successfully as ${exportType.toUpperCase()}!`);
+            }, 2000);
+        }
+
+        function generateExportFile(type, dateRange) {
+            let data, filename, mimeType;
+            
+            switch(type) {
+                case 'csv':
+                    data = generateCSVData();
+                    filename = `analytics-${dateRange}days.csv`;
+                    mimeType = 'text/csv';
+                    break;
+                case 'json':
+                    data = generateJSONData();
+                    filename = `analytics-${dateRange}days.json`;
+                    mimeType = 'application/json';
+                    break;
+                case 'pdf':
+                    data = generatePDFData();
+                    filename = `analytics-report-${dateRange}days.pdf`;
+                    mimeType = 'application/pdf';
+                    break;
+            }
+            
+            const blob = new Blob([data], { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function generateCSVData() {
+            return `Date,Users,API Calls,Revenue,Active Sessions
+2024-12-01,12000,2100000,42000,3000
+2024-12-02,12100,2150000,42500,3100
+2024-12-03,12200,2200000,43000,3200
+2024-12-04,12300,2250000,43500,3300
+2024-12-05,12400,2300000,44000,3400`;
+        }
+
+        function generateJSONData() {
+            return JSON.stringify({
+                "analytics": {
+                    "dateRange": "30 days",
+                    "totalUsers": 12543,
+                    "totalApiCalls": 2400000,
+                    "totalRevenue": 45230,
+                    "activeSessions": 3247,
+                    "dailyData": [
+                        {"date": "2024-12-01", "users": 12000, "apiCalls": 2100000, "revenue": 42000, "sessions": 3000},
+                        {"date": "2024-12-02", "users": 12100, "apiCalls": 2150000, "revenue": 42500, "sessions": 3100}
+                    ]
+                }
+            }, null, 2);
+        }
+
+        function generatePDFData() {
+            // In a real implementation, you would use a PDF library like jsPDF
+            return "PDF generation would be implemented here with a proper PDF library";
+        }
+
+        function exportPerformanceData() {
+            alert('Performance data exported successfully!');
+        }
+
+        function exportActivityData() {
+            alert('Activity data exported successfully!');
+        }
+
+        function viewDetails(id) {
+            alert(`Viewing details for activity ${id}`);
+        }
+
+        function loadActivityData() {
+            // Load activity data based on filter
+            const filter = document.getElementById('activity-filter');
+            filter.addEventListener('change', function() {
+                // Filter table rows based on selected option
+                const rows = document.querySelectorAll('#activity-table-body tr');
+                const filterValue = this.value;
+                
+                rows.forEach(row => {
+                    if (filterValue === 'all') {
+                        row.style.display = '';
+                    } else {
+                        const eventType = row.querySelector('.event-type').textContent.toLowerCase();
+                        if (eventType.includes(filterValue)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }
+
+        // Chart type switching
+        document.querySelectorAll('.chart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const chartType = this.dataset.chart;
+                const chartContainer = this.closest('.chart-container');
+                const chartWrapper = chartContainer.querySelector('.chart-wrapper canvas');
+                
+                // Update active button
+                chartContainer.querySelectorAll('.chart-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update chart type
+                if (chartWrapper.id === 'userGrowthChart') {
+                    userGrowthChart.config.type = chartType;
+                    userGrowthChart.update();
+                } else if (chartWrapper.id === 'apiUsageChart') {
+                    apiUsageChart.config.type = chartType;
+                    apiUsageChart.update();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
